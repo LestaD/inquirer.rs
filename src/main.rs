@@ -3,6 +3,14 @@ extern crate inquirer;
 
 use inquirer::{Question};
 
+///
+/// # Foo bar
+///
+/// ```
+/// let foo = 5;
+/// assert_eq!(foo, 5);
+/// ```
+
 fn main() {
   let list = vec![
     Question::new(),
