@@ -1,7 +1,9 @@
+extern crate term;
+
 pub mod question;
 pub mod answer;
 
-use std::io::{stdin, stdout, Write};
+use std::io::{stdin, Write};
 pub use question::Question;
 pub use answer::Answer;
 
@@ -16,16 +18,15 @@ pub fn run(list: &Vec<Question>) -> Result<Vec<Answer>, Error> {
     }
     else {
         let mut answers: Vec<Answer> = Vec::new();
-        let mut id: usize = 1;
+        let mut id: u32 = 1;
+        let mut t = term::stdout().unwrap();
 
         for ques in list {
-            // let s: String = String::from("asd");
-
-            // let sout = stdout();
-            // let mut handle = sout.lock();
-            // handle.write(format!("{}. {}: ", id, ques.read()).into_bytes().as_slice());
-
-            println!("{}. {}: ", id, ques.read());
+            write!(t, "{}. ", id.to_string()).unwrap();
+            t.fg(term::color::GREEN).unwrap();
+            write!(t, "{}: ", ques.read()).unwrap();
+            t.reset().unwrap();
+            t.flush().unwrap();
 
             let mut answer_string = "".to_string();
             stdin().read_line(&mut answer_string).unwrap();

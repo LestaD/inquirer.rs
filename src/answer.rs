@@ -4,7 +4,7 @@ use ::question::Question;
 
 #[derive(Debug)]
 pub struct Answer<'a> {
-  id: usize,
+  id: u32,
   question: &'a Question,
   string: String,
 }
@@ -16,7 +16,7 @@ impl<'a> fmt::Display for Answer<'a> {
 }
 
 impl<'a> Answer<'a> {
-  pub fn new(id: usize, question: &'a Question, string: String) -> Answer {
+  pub fn new(id: u32, question: &'a Question, string: String) -> Answer {
     Answer { id, question, string }
   }
 
