@@ -1,8 +1,8 @@
 pub mod question;
 pub mod answer;
 
-use question::Question;
-use answer::Answer;
+pub use question::Question;
+pub use answer::Answer;
 
 pub enum Error {
     EmptyQuestions,

@@ -1,7 +1,7 @@
 
 extern crate inquirer;
 
-use inquirer::question::{Question};
+use inquirer::{Question};
 
 fn main() {
   let list = vec![
