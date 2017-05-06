@@ -2,5 +2,8 @@
 name = "inquirer"
 version = "0.1.0"
 authors = ["Sergey Sova <i.am@lestad.net>"]
+description = "Questions for user"
+license = "MIT"
+repository = "https://github.com/LestaD/inquirer.rs"
 
 [dependencies]
