@@ -13,3 +13,13 @@ impl Question {
         &self.question
     }
 }
+
+
+/**
+Maybe question is enum?
+*/
+
+enum _Question {
+    Line(String),
+    Select(String, Vec<String>),
+}
