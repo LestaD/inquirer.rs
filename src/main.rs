@@ -13,9 +13,9 @@ use inquirer::{Question};
 
 fn main() {
   let list = vec![
-    Question::new(),
-    Question::new(),
-    Question::new(),
+    Question::new("Name"),
+    Question::new("Email"),
+    Question::new("GitHub name"),
   ];
 
   match inquirer::run(&list) {
