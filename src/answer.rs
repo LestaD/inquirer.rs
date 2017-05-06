@@ -16,7 +16,11 @@ impl<'a> fmt::Display for Answer<'a> {
 }
 
 impl<'a> Answer<'a> {
-  pub fn new(id: usize, question: &'a Question) -> Answer {
-    Answer { id, question, string: "".to_string() }
+  pub fn new(id: usize, question: &'a Question, string: String) -> Answer {
+    Answer { id, question, string }
+  }
+
+  pub fn get_answer(&self) -> String {
+    self.string.clone()
   }
 }

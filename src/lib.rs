@@ -1,6 +1,7 @@
 pub mod question;
 pub mod answer;
 
+use std::io::{stdin, stdout, Write};
 pub use question::Question;
 pub use answer::Answer;
 
@@ -18,8 +19,18 @@ pub fn run(list: &Vec<Question>) -> Result<Vec<Answer>, Error> {
         let mut id: usize = 1;
 
         for ques in list {
+            // let s: String = String::from("asd");
+
+            // let sout = stdout();
+            // let mut handle = sout.lock();
+            // handle.write(format!("{}. {}: ", id, ques.read()).into_bytes().as_slice());
+
             println!("{}. {}: ", id, ques.read());
-            answers.push(Answer::new(id, ques));
+
+            let mut answer_string = "".to_string();
+            stdin().read_line(&mut answer_string).unwrap();
+
+            answers.push(Answer::new(id, ques, answer_string.trim().to_string()));
             id += 1;
         }
 
