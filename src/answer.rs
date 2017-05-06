@@ -6,6 +6,7 @@ use ::question::Question;
 pub struct Answer<'a> {
   id: usize,
   question: &'a Question,
+  string: String,
 }
 
 impl<'a> fmt::Display for Answer<'a> {
@@ -16,6 +17,6 @@ impl<'a> fmt::Display for Answer<'a> {
 
 impl<'a> Answer<'a> {
   pub fn new(id: usize, question: &'a Question) -> Answer {
-    Answer { id, question }
+    Answer { id, question, string: "".to_string() }
   }
 }
